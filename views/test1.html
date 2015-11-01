@@ -11,7 +11,7 @@
     <!--  / bootstrap -->
     <link href='../asserts/stylesheets/bootstrap/bootstrap.min.css' media='all' rel='stylesheet' type='text/css'/>
     <!-- / full page -->
-
+    <link href="../asserts/stylesheets/plugs/fullpage/jquery.fullPage.css" media="all" rel="stylesheet" type="text/css"/>
     <style>
         .welcome_link {
             cursor: pointer;
@@ -98,8 +98,12 @@
 </head>
 
 <body scroll="no">
+<ul id='menu' class='nav'>
+    <li data-menuanchor="page1"><a href="#page1" class='active'>第1个项目</a></li>
+    <li data-menuanchor="page2"><a href="#page2">第2个项目</a></li>
+</ul>
 <div class="cont">
-    <div class="section stage stage1" id="stage1" style="background-color: red;">
+    <div class="section stage stage1" id="stage1">
         <a class="welcome_link btn_down" index="1">
             <div class='sign signImg1' id='sign1_1'></div>
             <div class='sign signImg2' id='sign2_1'></div>
@@ -150,6 +154,20 @@
     $(document).ready(function () {
         //启动下滑提示效果
         signAnimate();
-
+        //滑动滚动
+        $.fn.fullpage({
+            // 设置每一屏的背景颜色
+            //'slidesColor': ['#999', '#4BBFC3', '#7BAABE', '#f90','#1bbc9b', '#4BBFC3', '#7BAABE','#f90'],
+            // 定义锚链接
+            'anchors': ['page1', 'page2'],
+            // 是否使用 CSS3 transforms 滚动,设置为true自定义导航栏才能显示
+            'css3': true,
+            // 绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动
+            'menu' : '.nav',
+            // 字体是否随着窗口缩放而缩放
+            'resize': true,
+            // 滚动速度，单位为毫秒,默认为700
+            'scrollingSpeed': 800
+        });
     });
 </script>
