@@ -11,7 +11,8 @@
     <!--  / bootstrap -->
     <link href='../asserts/stylesheets/bootstrap/bootstrap.min.css' media='all' rel='stylesheet' type='text/css'/>
     <!-- / full page -->
-    <link href="../asserts/stylesheets/plugs/fullpage/jquery.fullPage.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="../asserts/stylesheets/plugs/fullpage/jquery.fullPage.css" media="all" rel="stylesheet"
+          type="text/css"/>
     <style>
         .welcome_link {
             cursor: pointer;
@@ -76,11 +77,11 @@
         }
 
         .stage2 {
-            background-color: #f3bf2e;
+            background-color: #5c86c2;
         }
 
         .stage3 {
-            background-color: #5c86c2;
+            background-color: #f3bf2e;
         }
 
         .stage4 {
@@ -94,28 +95,37 @@
         .stage6 {
             background-color: #f9f9f9;
         }
+        .screen-main { position: relative; width: 1280px; height: 840px; margin: 0 auto;}
+        .screen-main span { position: absolute;}
     </style>
 </head>
 
 <body scroll="no">
-<ul id='menu' class='nav'>
-    <li data-menuanchor="page1"><a href="#page1" class='active'>第1个项目</a></li>
-    <li data-menuanchor="page2"><a href="#page2">第2个项目</a></li>
-</ul>
 <div class="cont">
-    <div class="section stage stage1" id="stage1">
-        <a class="welcome_link btn_down" index="1">
+    <div class="section stage stage1 active" id="stage1">
+        <a class="welcome_link btn_down" id="down1" href="#page2">
             <div class='sign signImg1' id='sign1_1'></div>
             <div class='sign signImg2' id='sign2_1'></div>
             <div class='sign signImg3' id='sign3_1'></div>
         </a>
+        <div class="screen-main">
+            <span>123</span>
+        </div>
     </div>
     <div class="section stage stage2" id="stage2">
-        <a class="welcome_link btn_down" index="1">
+        <a class="welcome_link btn_down" id="down2" href="#page3">
             <div class='sign signImg1' id='sign1_2'></div>
             <div class='sign signImg2' id='sign2_2'></div>
             <div class='sign signImg3' id='sign3_2'></div>
         </a>
+    </div>
+    <div class="section stage stage5" id="stage3">
+        <div class="row">
+            <div class="col-xs-5"></div>
+            <div class="col-xs-4">
+                <button class="btn btn-lg btn-warning" style="width: 200px;">马上体验</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>
@@ -154,20 +164,26 @@
     $(document).ready(function () {
         //启动下滑提示效果
         signAnimate();
-        //滑动滚动
-        $.fn.fullpage({
-            // 设置每一屏的背景颜色
-            //'slidesColor': ['#999', '#4BBFC3', '#7BAABE', '#f90','#1bbc9b', '#4BBFC3', '#7BAABE','#f90'],
-            // 定义锚链接
-            'anchors': ['page1', 'page2'],
-            // 是否使用 CSS3 transforms 滚动,设置为true自定义导航栏才能显示
-            'css3': true,
-            // 绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动
-            'menu' : '.nav',
-            // 字体是否随着窗口缩放而缩放
-            'resize': true,
-            // 滚动速度，单位为毫秒,默认为700
-            'scrollingSpeed': 800
+        //全屏滚动
+        $('.cont').fullpage({
+            'keyboardScrolling': true,//支持键盘
+            'navigation': true,//显示默认滚动条
+            'anchors': ['page1', 'page2', 'page3'],
+            'navigationTooltips': ['首页', '功能', '马上体验'],
+            'continuousVertical': false, //循环滚动
+            'afterLoad' : function(anchorLink, index) {
+                //第一屏动画效果
+                if(index==1) {
+                   // $('#intr_1_1').show().animate({marginLeft:'48%'}, 800)
+                   // $('#intr_word_1_1').show().animate({marginBottom:'80%'}, 800)
+                }
+                if(index==2) {
+                    //重置其他page效果
+                    //.--1
+                    //$('#intr_1_1').hide().animate({marginLeft:''}, 800)
+                   // $('#intr_word_1_1').hide().animate({marginBottom:''},800);
+                }
+            }
         });
     });
 </script>
