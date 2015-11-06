@@ -103,16 +103,31 @@
 <body scroll="no">
 <div class="cont">
     <div class="section stage stage1 active" id="stage1">
+        <div id="stage1_img_1" style="position: absolute; float: right; right: 0%; top: 50px; margin-top: 100%;display: none;">
+            <img src="../asserts/images/moudle/welcome/welcome_girl.png" height="520px">
+        </div>
+        <div id="stage1_img_2" style="position: absolute;float: left; left: 5%;top: 100px;">
+            <img src="../asserts/images/moudle/welcome/welcome_word.png" width="400px">
+        </div>
+        <div id="stage1_img_3" style="position: absolute;float: left; left: 0%;top: 0px;display: none;">
+            <img src="../asserts/images/moudle/welcome/welcome_star.png">
+        </div>
+        <div id="stage1_img_4" style="position: absolute;float: right; right: -10%;top: 10%;display: none;">
+            <img src="../asserts/images/moudle/welcome/welcome_book1.png">
+        </div>
+        <div id="stage1_img_5" style="position: absolute;float: left;left:-80%;top: 60%;display: none;">
+            <img src="../asserts/images/moudle/welcome/welcome_intr1.png">
+        </div>
         <a class="welcome_link btn_down" id="down1" href="#page2">
             <div class='sign signImg1' id='sign1_1'></div>
             <div class='sign signImg2' id='sign2_1'></div>
             <div class='sign signImg3' id='sign3_1'></div>
         </a>
-        <div class="screen-main">
-            <span>123</span>
-        </div>
     </div>
     <div class="section stage stage2" id="stage2">
+        <div id="stage2_img_1" style="position: absolute;top: 20%;left: 5%">
+            <img src="../asserts/images/moudle/welcome/welcome_intr_view1.png">
+        </div>
         <a class="welcome_link btn_down" id="down2" href="#page3">
             <div class='sign signImg1' id='sign1_2'></div>
             <div class='sign signImg2' id='sign2_2'></div>
@@ -174,14 +189,18 @@
             'afterLoad' : function(anchorLink, index) {
                 //第一屏动画效果
                 if(index==1) {
-                   // $('#intr_1_1').show().animate({marginLeft:'48%'}, 800)
-                   // $('#intr_word_1_1').show().animate({marginBottom:'80%'}, 800)
+                    $('#stage1_img_1').show().animate({marginTop:'5%', marginRight:'10%'} , 800);
+                    $('#stage1_img_3').show().animate({marginLeft:'25%',marginTop:'80px'} , 800);
+                    $('#stage1_img_4').show().animate({marginRight:'12%'} , 1000);
+                    $('#stage1_img_5').show().animate({marginLeft:'85%'} , 1000);
                 }
                 if(index==2) {
                     //重置其他page效果
                     //.--1
-                    //$('#intr_1_1').hide().animate({marginLeft:''}, 800)
-                   // $('#intr_word_1_1').hide().animate({marginBottom:''},800);
+                    $('#stage1_img_1').hide().css({'margin-top': '100%','margin-right':'0%'});
+                    $('#stage1_img_3').hide().css({'margin-top': '0px','margin-left':'0%'});
+                    $('#stage1_img_4').hide().css({'margin-right':'0%'});
+                    $('#stage1_img_5').hide().css({'margin-left':'0%'});
                 }
             }
         });
