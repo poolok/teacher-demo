@@ -1,0 +1,57 @@
+body, button, input, select, textarea {
+    font: 12px/1.5 "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体";
+    background-color: #fff;
+}
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+.page-header-nav {
+    line-height: 14px;
+    list-style: outside none none;
+}
+.page-header-nav, li {
+    float:left;
+    outline-width: 0px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #9d9d9d;
+}
+.page-header-nav,li, a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+.page-header-nav, .nav-first{
+    border: 0px;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}
+*::after, *::before {
+    box-sizing: border-box;
+}
+.bs-docs-footer p {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.bs-docs-footer {
+    color: #767676;
+    text-align: center;
+    border-top: 1px solid #d4d4d4;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+.bs-docs-footer p {
+    margin-bottom: 0;
+}
