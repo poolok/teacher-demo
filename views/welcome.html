@@ -18,9 +18,8 @@
     <!-- / full page -->
     <link href="../asserts/stylesheets/plugs/fullpage/jquery.fullPage.css" media="all" rel="stylesheet"
           type="text/css"/>
-    <!-- base-->
+    <!-- base    -->
     <link href="../asserts/stylesheets/base/base_style_v1.css" media="all" rel="stylesheet" type="text/css"/>
-
     <style>
         .welcome_link {
             cursor: pointer;
@@ -117,7 +116,7 @@
         <div id="stage1_img_2" style="position: absolute;float: left; left: 5%;top: 100px;">
             <img src="../asserts/images/moudle/welcome/welcome_word.png" width="400px">
         </div>
-        <div id="stage1_img_3" style="position: absolute;float: left; left: 0%;top: 0px;display: none;">
+        <div id="stage1_img_3" style="position: absolute;float: left; left: -10%;top: 0px;display: none;">
             <img src="../asserts/images/moudle/welcome/welcome_star.png">
         </div>
         <div id="stage1_img_4" style="position: absolute;float: right; right: -10%;top: 10%;display: none;">
@@ -198,7 +197,7 @@
                 //第一屏动画效果
                 if(index==1) {
                     $('#stage1_img_1').show().animate({marginTop:'5%', marginRight:'10%'} , 800);
-                    $('#stage1_img_3').show().animate({marginLeft:'25%',marginTop:'80px'} , 800);
+                    $('#stage1_img_3').show().animate({marginLeft:'40%',marginTop:'90px'} , 800);
                     $('#stage1_img_4').show().animate({marginRight:'12%'} , 1000);
                     $('#stage1_img_5').show().animate({marginLeft:'85%'} , 1000);
                 }
@@ -206,7 +205,7 @@
                     //重置其他page效果
                     //.--1
                     $('#stage1_img_1').hide().css({'margin-top': '100%','margin-right':'0%'});
-                    $('#stage1_img_3').hide().css({'margin-top': '0px','margin-left':'0%'});
+                    $('#stage1_img_3').hide().css({'margin-top': '0px','margin-left':'-10%'});
                     $('#stage1_img_4').hide().css({'margin-right':'0%'});
                     $('#stage1_img_5').hide().css({'margin-left':'0%'});
                 }
